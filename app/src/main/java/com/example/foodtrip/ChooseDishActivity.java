@@ -59,14 +59,6 @@ public class ChooseDishActivity extends AppCompatActivity {
 
         lvDishes.setAdapter(dishAdapter);
 
-       /* lvDishes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), DetailedDishInfoActivity.class);
-                //intent.putExtra("ChooseDishResult", position);
-                startActivity(intent);
-            }
-        });*/
     }
 
     private ArrayList<Dish> sortDishes(int countryCode, ArrayList<Dish> dishes) {
@@ -105,27 +97,14 @@ public class ChooseDishActivity extends AppCompatActivity {
                 TextView tvDescription = convertView.findViewById(R.id.tvDescription);
                 RatingBar rbRating = convertView.findViewById(R.id.rbRating);
                 TextView tvOther = convertView.findViewById(R.id.tvOther);
-                TextView tvId = convertView.findViewById(R.id.tvId);
 
                 tvDishName.setText(currentDish.getName());
                 tvDescription.setText(currentDish.getDescription());
                 rbRating.setRating(currentDish.getRating());
                 tvOther.setText(currentDish.getOther());
                 int i = currentDish.getDishId();
-                tvId.setText(String.valueOf(i));
 
 
-
-
-               /* ivPicture.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       // TextView tvDishId = v.findViewById(R.id.tvId);
-                        Intent intent = new Intent(getApplicationContext(), DetailedDishInfoActivity.class);
-                      //  intent.putExtra("ChooseDishResult", tvDishId.getText());
-                        startActivity(intent);
-                    }
-                });*/
                 tvDishName.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -137,24 +116,7 @@ public class ChooseDishActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-               /* tvDescription.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       // TextView tvDishId = v.findViewById(R.id.tvId);
-                        Intent intent = new Intent(getApplicationContext(), DetailedDishInfoActivity.class);
-                       // intent.putExtra("ChooseDishResult", tvDishId.getText());
-                        startActivity(intent);
-                    }
-                });
-                tvOther.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                      //  TextView tvDishId = v.findViewById(R.id.tvId);
-                        Intent intent = new Intent(getApplicationContext(), DetailedDishInfoActivity.class);
-                      //  intent.putExtra("ChooseDishResult", tvDishId.getText());
-                        startActivity(intent);
-                    }
-                });*/
+
 
             }
             catch (Exception e)

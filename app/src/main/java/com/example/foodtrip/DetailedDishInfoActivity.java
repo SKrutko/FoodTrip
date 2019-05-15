@@ -205,9 +205,6 @@ private void showComments()
     final TextView tvNumberOfComments = findViewById(R.id.tvNumberOfComments);
 
     ArrayList<Comment> coms = DishCollection.getComments();
-    //coms.add(new Comment(1, "Sofia Krutko", "Very tasty"));
-    //coms.add(new Comment(1, "Serhei Krutko", "I think it is very good!"));
-
 
     commentsForCurrentCountry = sortComments(currentDish.getDishId(), coms);
     tvNumberOfComments.setText(commentsForCurrentCountry.size() + " " + tvNumberOfComments.getText());
