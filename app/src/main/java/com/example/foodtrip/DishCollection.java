@@ -1,5 +1,6 @@
 package com.example.foodtrip;
 
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 public class DishCollection {
     private static ArrayList<Dish> dishes;
     private static ArrayList<Comment> comments;
+
 
 
     public static ArrayList<Dish> getDishes() {
@@ -43,5 +45,18 @@ public class DishCollection {
                 return c;
         }
         return null;
+    }
+
+    public static void addComment(int dishId, String name, String comment)
+    {
+        FirebaseDatabase database;
+        DatabaseReference commentRef;
+
+        database = FirebaseDatabase.getInstance();
+        commentRef = database.getReference().child("Comment");
+
+        commentRef.child(String.valueOf(comments.size())).child("dishId").setValue(dishId);
+        commentRef.child(String.valueOf(comments.size())).child("CommentatorName").setValue(name);
+        commentRef.child(String.valueOf(comments.size())).child("Comment").setValue(comment);
     }
 }

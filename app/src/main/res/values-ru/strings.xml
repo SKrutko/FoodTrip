@@ -5,4 +5,7 @@
     <string name="change_language">Изменить язык</string>
     <string name="search_country">Введите название страны</string>
     <string name="amount_of_comments">Комментариев</string>
+    <string name="add_comment">Комментировать</string>
+    <string name="enter_your_comment">Введите комментарий:</string>
+    <string name="enter_your_name">Введите свое имя...</string>
 </resources>

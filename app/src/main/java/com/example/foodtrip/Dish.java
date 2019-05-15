@@ -15,8 +15,18 @@ public class  Dish {
     private String other;
     private int countryCode;
     private int dishId;
-
+    private boolean wasRatingChanged = false;
     private boolean isNumberOfRatingSet = true;
+
+    public boolean isWasRatingChanged() {
+        return wasRatingChanged;
+    }
+
+    public void setWasRatingChanged(boolean wasRatingChanged) {
+        this.wasRatingChanged = wasRatingChanged;
+    }
+
+
 
     public String getDetailedDescription() {
         return detailedDescription;
@@ -128,7 +138,6 @@ public class  Dish {
             database = FirebaseDatabase.getInstance();
             myRef= database.getReference();
 
-            //numberOfRating --;
             myRef.child("Dish").child(String.valueOf(getDishId())).child("Rating").setValue(rating);
             setNumberOfRatingToFirebase(myRef);
         }

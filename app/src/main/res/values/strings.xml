@@ -5,6 +5,9 @@
     <string name="change_language">Change Language</string>
     <string name="search_country">Search country</string>
     <string name="amount_of_comments">Comments</string>
+    <string name="add_comment">Add Comment</string>
+    <string name="enter_your_comment">Enter your comment...</string>
+    <string name="enter_your_name">Enter your name...</string>
     <string-array name="listOfCountries">
         <item>Albania</item>
         <item>Armenia</item>

@@ -12,7 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -53,7 +56,11 @@ public class DetailedDishInfoActivity extends AppCompatActivity {
         final RatingBar rbRating = findViewById(R.id.rbRating);
         TextView tvOther = findViewById(R.id.tvOther);
         TextView tvBiggerDescription = findViewById(R.id.tvBiggerDescription);
-        TextView tvNumberOfComments = findViewById(R.id.tvNumberOfComments);
+        Button btnAddComment = findViewById(R.id.btnAddComment);
+        final LinearLayout llComments = findViewById(R.id.llComments);
+        final LinearLayout llAddComment = findViewById(R.id.llAddComment);
+
+
 
         currentDish = DishCollection.getDishById(Integer.parseInt(choosenDish));
 
@@ -78,10 +85,12 @@ public class DetailedDishInfoActivity extends AppCompatActivity {
         @Override
         public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 
-            Log.d("Action", "ratingBar clicked" );
             currentDish.setIsNumberOfRatingSet(false);
-            currentDish.rate(rating);
-            rbRating.setRating(currentDish.getRating());
+           if(!currentDish.isWasRatingChanged()) {
+               currentDish.setWasRatingChanged(true);
+               currentDish.rate(rating);
+               rbRating.setRating(currentDish.getRating());
+           }
             rbRating.setIsIndicator(true);
         }
     });
@@ -93,20 +102,18 @@ public class DetailedDishInfoActivity extends AppCompatActivity {
 
         lvComments = findViewById(R.id.lvComments);
 
-        ArrayList<Comment> coms = DishCollection.getComments();
-        //coms.add(new Comment(1, "Sofia Krutko", "Very tasty"));
-        //coms.add(new Comment(1, "Serhei Krutko", "I think it is very good!"));
 
-        commentsForCurrentCountry = sortComments(currentDish.getDishId(), coms);
-        tvNumberOfComments.setText(commentsForCurrentCountry.size() + " " + tvNumberOfComments.getText());
+        showComments();
 
-        commentAdapter = new CommentAdapter(
-                getApplicationContext(),
-                R.layout.comment_layout,
-                commentsForCurrentCountry
-        );
-
-        lvComments.setAdapter(commentAdapter);
+        //set on click listener on button
+        btnAddComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LeaveCommentActivity.class);
+                intent.putExtra("DishId", String.valueOf(currentDish.getDishId()));
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -186,5 +193,26 @@ private ArrayList<Comment> sortComments(int dishId, ArrayList<Comment> comments)
             result.add(c);
     }
     return result;
+}
+
+private void showComments()
+{
+    final TextView tvNumberOfComments = findViewById(R.id.tvNumberOfComments);
+
+    ArrayList<Comment> coms = DishCollection.getComments();
+    //coms.add(new Comment(1, "Sofia Krutko", "Very tasty"));
+    //coms.add(new Comment(1, "Serhei Krutko", "I think it is very good!"));
+
+
+    commentsForCurrentCountry = sortComments(currentDish.getDishId(), coms);
+    tvNumberOfComments.setText(commentsForCurrentCountry.size() + " " + tvNumberOfComments.getText());
+
+    commentAdapter = new CommentAdapter(
+            getApplicationContext(),
+            R.layout.comment_layout,
+            commentsForCurrentCountry
+    );
+
+    lvComments.setAdapter(commentAdapter);
 }
 }

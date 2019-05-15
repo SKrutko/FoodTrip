@@ -48,4 +48,7 @@
         <item>США</item>
     </string-array>
     <string name="amount_of_comments">Коментарів</string>
+    <string name="add_comment">Коментувати</string>
+    <string name="enter_your_comment">Залиште коментарій:</string>
+    <string name="enter_your_name">Введіть своє ім\'я...</string>
 </resources>

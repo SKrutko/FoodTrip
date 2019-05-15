@@ -51,10 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ArrayList<Dish> dishes = new ArrayList<>();
-       // dishes.add(new Dish("Zurek", "Is eatable",  3, "noimag.jpg", "", 31, 0));
-       // dishes.add(new Dish("Pierogi", "Is even more eatable", 4, "noimage.jpg", "", 31, 1));
-       // dishes.add(new Dish("Borch", "Is even more than more eatable", 5, "noimage.jpg", "", 38, 2));
-       // dishes.add(new Dish("Warenyky", "Is even more than more than more eatable", 4.5f, "noimage.jpg", "", 38, 3));
+        comments = new ArrayList<>();
 
 
 
