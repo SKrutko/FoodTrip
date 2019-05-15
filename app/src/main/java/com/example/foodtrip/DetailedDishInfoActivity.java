@@ -69,10 +69,15 @@ public class DetailedDishInfoActivity extends AppCompatActivity {
             rbRating.setRating(currentDish.getRating());
             tvOther.setText(currentDish.getOther());
             tvBiggerDescription.setText(currentDish.getDescription() + " " + currentDish.getDetailedDescription());
+
             try {
-                // ivPicture.setImageResource(R.drawable.mainpicture);
+                if(!(currentDish.getImage().equals("none") || currentDish.getImage().equals("")))
                 new DownloadImageTask(ivPicture)
                         .execute(currentDish.getImage());
+                else
+                {
+                    ivPicture.setImageResource(R.drawable.nopicture);
+                }
             }
             catch (Exception e)
             {
