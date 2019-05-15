@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name" translatable="false">foodtrip</string>
+    <string name="welcome_message">Welcome to the world of food!</string>
+    <string name="find_food">Find Food</string>
+    <string name="change_language">Change Language</string>
+    <string name="search_country">Search country</string>
+    <string name="amount_of_comments">Comments</string>
+    <string-array name="listOfCountries">
+        <item>Albania</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Brazil</item>
+        <item>Bulgaria</item>
+        <item>Canada</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Czech Republic</item>
+        <item>Denmark</item>
+        <item>Egypt</item>
+        <item>Estonia</item>
+        <item>France</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Greece</item>
+        <item>Hungary</item>
+        <item>India</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Japan</item>
+        <item>Kazakhstan</item>
+        <item>Lithuania</item>
+        <item>Netherlands</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Spain</item>
+        <item>Sweden</item>
+        <item>Turkey</item>
+        <item>Ukraine</item>
+        <item>United Kingdom</item>
+        <item>United States</item>
+    </string-array>
+</resources>

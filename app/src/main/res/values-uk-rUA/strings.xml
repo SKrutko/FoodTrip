@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message">Ласкаво просимо до світу їжі!</string>
+    <string name="find_food">Знайти</string>
+    <string name="change_language">Змінити мову</string>
+    <string name="search_country">Назва країни</string>
+    <string-array name="listOfCountries">
+        <item>Албанія</item>
+        <item>Арменія</item>
+        <item>Австралія</item>
+        <item>Австрія</item>
+        <item>Азербайджан</item>
+        <item>Білорусь</item>
+        <item>Бельгія</item>
+        <item>Бразилія</item>
+        <item>Болгарія</item>
+        <item>Канада</item>
+        <item>Китай</item>
+        <item>Колумбія</item>
+        <item>Хорватія</item>
+        <item>Куба</item>
+        <item>Чеська Республіка</item>
+        <item>Данія</item>
+        <item>Єгипт</item>
+        <item>Естонія</item>
+        <item>Франція</item>
+        <item>Грузія</item>
+        <item>Німеччина</item>
+        <item>Греція</item>
+        <item>Угорщина</item>
+        <item>Індія</item>
+        <item>Ірландія</item>
+        <item>Ізраїль</item>
+        <item>Італія</item>
+        <item>Японія</item>
+        <item>Казахстан</item>
+        <item>Литва</item>
+        <item>Нідерланди</item>
+        <item>Польща</item>
+        <item>Португалія</item>
+        <item>Румунія</item>
+        <item>Росія</item>
+        <item>Іспанія</item>
+        <item>Швеція</item>
+        <item>Турція</item>
+        <item>Україна</item>
+        <item>Великобританія</item>
+        <item>США</item>
+    </string-array>
+    <string name="amount_of_comments">Коментарів</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message">Добро пожаловать в мир еды!</string>
+    <string name="find_food">Найти</string>
+    <string name="change_language">Изменить язык</string>
+    <string name="search_country">Введите название страны</string>
+    <string name="amount_of_comments">Комментариев</string>
+</resources>
